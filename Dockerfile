@@ -7,7 +7,10 @@ ENV PYTHON_VERSION=${python}
 RUN apt-get update && apt-get install -y --allow-downgrades --allow-change-held-packages --no-install-recommends \
         build-essential \
         nano \
-        curl
+        curl \
+        python${PYTHON_VERSION} \
+        python${PYTHON_VERSION}-dev \
+        python${PYTHON_VERSION}-distutils 
 
 
 RUN ln -s /usr/bin/python${PYTHON_VERSION} /usr/bin/python
